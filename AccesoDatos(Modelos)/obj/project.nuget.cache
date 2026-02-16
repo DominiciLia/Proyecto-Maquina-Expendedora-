@@ -1,0 +1,20 @@
+{
+  "version": 2,
+  "dgSpecHash": "ngX+KYfYOnk=",
+  "success": false,
+  "projectFilePath": "C:\\Users\\domin\\source\\repos\\Mquina Expendedora\\AccesoDatos(Modelos)\\AccesoDatos(Modelos).csproj",
+  "expectedPackageFiles": [],
+  "logs": [
+    {
+      "code": "NU1201",
+      "level": "Error",
+      "message": "Project FrmMaquinaExpendedora is not compatible with net10.0 (.NETCoreApp,Version=v10.0). Project FrmMaquinaExpendedora supports: net10.0-windows7.0 (.NETCoreApp,Version=v10.0)",
+      "projectPath": "C:\\Users\\domin\\source\\repos\\Mquina Expendedora\\AccesoDatos(Modelos)\\AccesoDatos(Modelos).csproj",
+      "filePath": "C:\\Users\\domin\\source\\repos\\Mquina Expendedora\\AccesoDatos(Modelos)\\AccesoDatos(Modelos).csproj",
+      "libraryId": "FrmMaquinaExpendedora",
+      "targetGraphs": [
+        "net10.0"
+      ]
+    }
+  ]
+}

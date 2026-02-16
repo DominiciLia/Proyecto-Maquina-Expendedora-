@@ -1,0 +1,9 @@
+<Solution>
+  <Folder Name="/Modelos/">
+    <File Path="ConexionBD.cs" />
+    <File Path="Producto.cs" />
+  </Folder>
+  <Folder Name="/Presentacion/">
+    <Project Path="FrmMaquinaExpendedora/FrmMaquinaExpendedora.csproj" />
+  </Folder>
+</Solution>

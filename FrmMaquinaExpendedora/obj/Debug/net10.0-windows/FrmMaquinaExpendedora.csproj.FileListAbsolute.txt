@@ -1,0 +1,7 @@
+C:\Users\domin\source\repos\Mquina Expendedora\FrmMaquinaExpendedora\obj\Debug\net10.0-windows\FrmMaquinaExpendedora.csproj.AssemblyReference.cache
+C:\Users\domin\source\repos\Mquina Expendedora\FrmMaquinaExpendedora\obj\Debug\net10.0-windows\FrmMaquinaExpendedora.Form1.resources
+C:\Users\domin\source\repos\Mquina Expendedora\FrmMaquinaExpendedora\obj\Debug\net10.0-windows\FrmMaquinaExpendedora.csproj.GenerateResource.cache
+C:\Users\domin\source\repos\Mquina Expendedora\FrmMaquinaExpendedora\obj\Debug\net10.0-windows\FrmMaquinaExpendedora.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\domin\source\repos\Mquina Expendedora\FrmMaquinaExpendedora\obj\Debug\net10.0-windows\FrmMaquinaExpendedora.AssemblyInfoInputs.cache
+C:\Users\domin\source\repos\Mquina Expendedora\FrmMaquinaExpendedora\obj\Debug\net10.0-windows\FrmMaquinaExpendedora.AssemblyInfo.cs
+C:\Users\domin\source\repos\Mquina Expendedora\FrmMaquinaExpendedora\obj\Debug\net10.0-windows\FrmMaquinaExpendedora.csproj.CoreCompileInputs.cache
