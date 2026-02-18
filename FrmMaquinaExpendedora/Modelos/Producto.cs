@@ -1,11 +1,11 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 public class Producto
 {
-
-		public string producto { get; set; }
-
-	    public int codigo { get; set; }
+	    [Key]
+		public String  codigoProducto { get; set; }
+	    public string producto { get; set; }
 
 	    public decimal precio { get; set; }
 

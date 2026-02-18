@@ -1,6 +1,7 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore;
 
+
 public class ConexionBD : DbContext
 {
     public DbSet<Producto> Productos { get; set; }
