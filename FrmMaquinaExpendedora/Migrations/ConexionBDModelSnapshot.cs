@@ -38,7 +38,7 @@ namespace FrmMaquinaExpendedora.Migrations
 
                     b.HasKey("codigoProducto");
 
-                    b.ToTable("productos");
+                    b.ToTable("productos", (string)null);
                 });
 #pragma warning restore 612, 618
         }
