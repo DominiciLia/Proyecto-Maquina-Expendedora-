@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("FrmMaquinaExpendedora")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7eff88cd22f6a8f6652f8c307845f2adfb9b5aec")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b28c9fc33cbc9ebff7a51a1c27034a2c7a0b401a")]
 [assembly: System.Reflection.AssemblyProductAttribute("FrmMaquinaExpendedora")]
 [assembly: System.Reflection.AssemblyTitleAttribute("FrmMaquinaExpendedora")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

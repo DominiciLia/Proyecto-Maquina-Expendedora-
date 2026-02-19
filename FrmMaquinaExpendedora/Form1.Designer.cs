@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             panel1 = new Panel();
             label14 = new Label();
@@ -41,8 +42,9 @@
             label6 = new Label();
             label5 = new Label();
             label4 = new Label();
-            label3 = new Label();
+            Label = new Label();
             panel4 = new Panel();
+            Lbl_SalidaProducto = new Label();
             pictureBox12 = new PictureBox();
             pictureBox11 = new PictureBox();
             pictureBox10 = new PictureBox();
@@ -58,13 +60,25 @@
             PanelBotones = new Panel();
             Btn_BD = new Button();
             flowLayoutPanel1 = new FlowLayoutPanel();
+            Btn_Num0 = new Button();
+            Btn_Num1 = new Button();
+            Btn_Num2 = new Button();
+            btn_Num3 = new Button();
+            Btn_Num4 = new Button();
+            Btn_Num5 = new Button();
+            Btn_Num6 = new Button();
+            Btn_Num7 = new Button();
+            Btn_Num8 = new Button();
+            Btn_Num9 = new Button();
             textBox1 = new TextBox();
-            panel2 = new Panel();
-            panel3 = new Panel();
             label1 = new Label();
-            label2 = new Label();
             progressBar1 = new ProgressBar();
+            Lbl_ProcesarOrden = new Label();
+            button1 = new Button();
+            TimerBarraProgreso = new System.Windows.Forms.Timer(components);
+            Btn_EnviarCodigoProducto = new Button();
             panel1.SuspendLayout();
+            panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox12).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox11).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox10).BeginInit();
@@ -77,7 +91,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            panel2.SuspendLayout();
+            flowLayoutPanel1.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
@@ -94,7 +108,7 @@
             panel1.Controls.Add(label6);
             panel1.Controls.Add(label5);
             panel1.Controls.Add(label4);
-            panel1.Controls.Add(label3);
+            panel1.Controls.Add(Label);
             panel1.Controls.Add(panel4);
             panel1.Controls.Add(pictureBox12);
             panel1.Controls.Add(pictureBox11);
@@ -116,119 +130,142 @@
             // label14
             // 
             label14.AutoSize = true;
-            label14.Location = new Point(497, 984);
+            label14.Font = new Font("Goudy Old Style", 16.125F, FontStyle.Bold | FontStyle.Italic);
+            label14.Location = new Point(281, 984);
             label14.Name = "label14";
-            label14.Size = new Size(91, 32);
+            label14.Size = new Size(66, 51);
             label14.TabIndex = 23;
-            label14.Text = "label14";
+            label14.Text = "11";
             // 
             // label13
             // 
             label13.AutoSize = true;
-            label13.Location = new Point(268, 984);
+            label13.Font = new Font("Goudy Old Style", 16.125F, FontStyle.Bold | FontStyle.Italic);
+            label13.Location = new Point(513, 984);
             label13.Name = "label13";
-            label13.Size = new Size(91, 32);
+            label13.Size = new Size(66, 51);
             label13.TabIndex = 22;
-            label13.Text = "label13";
+            label13.Text = "12";
             // 
             // label12
             // 
             label12.AutoSize = true;
-            label12.Location = new Point(53, 984);
+            label12.Font = new Font("Goudy Old Style", 16.125F, FontStyle.Bold | FontStyle.Italic);
+            label12.Location = new Point(65, 984);
             label12.Name = "label12";
-            label12.Size = new Size(91, 32);
+            label12.Size = new Size(66, 51);
             label12.TabIndex = 21;
-            label12.Text = "label12";
+            label12.Text = "10";
             // 
             // label11
             // 
             label11.AutoSize = true;
-            label11.Location = new Point(497, 722);
+            label11.Font = new Font("Goudy Old Style", 16.125F, FontStyle.Bold | FontStyle.Italic);
+            label11.Location = new Point(513, 722);
             label11.Name = "label11";
-            label11.Size = new Size(91, 32);
+            label11.Size = new Size(44, 51);
             label11.TabIndex = 20;
-            label11.Text = "label11";
+            label11.Text = "9";
+            label11.Click += label11_Click;
             // 
             // label10
             // 
             label10.AutoSize = true;
-            label10.Location = new Point(268, 722);
+            label10.Font = new Font("Goudy Old Style", 16.125F, FontStyle.Bold | FontStyle.Italic);
+            label10.Location = new Point(294, 722);
             label10.Name = "label10";
-            label10.Size = new Size(91, 32);
+            label10.Size = new Size(44, 51);
             label10.TabIndex = 19;
-            label10.Text = "label10";
+            label10.Text = "8";
             // 
             // label9
             // 
             label9.AutoSize = true;
-            label9.Location = new Point(53, 722);
+            label9.Font = new Font("Goudy Old Style", 16.125F, FontStyle.Bold | FontStyle.Italic);
+            label9.Location = new Point(76, 722);
             label9.Name = "label9";
-            label9.Size = new Size(78, 32);
+            label9.Size = new Size(44, 51);
             label9.TabIndex = 18;
-            label9.Text = "label9";
+            label9.Text = "7";
             // 
             // label8
             // 
             label8.AutoSize = true;
-            label8.Location = new Point(53, 447);
+            label8.Font = new Font("Goudy Old Style", 16.125F, FontStyle.Bold | FontStyle.Italic);
+            label8.Location = new Point(87, 435);
             label8.Name = "label8";
-            label8.Size = new Size(78, 32);
+            label8.Size = new Size(44, 51);
             label8.TabIndex = 17;
-            label8.Text = "label8";
+            label8.Text = "4";
             // 
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(281, 447);
+            label7.Font = new Font("Goudy Old Style", 16.125F, FontStyle.Bold | FontStyle.Italic);
+            label7.Location = new Point(294, 435);
             label7.Name = "label7";
-            label7.Size = new Size(78, 32);
+            label7.Size = new Size(44, 51);
             label7.TabIndex = 16;
-            label7.Text = "label7";
+            label7.Text = "5";
             // 
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(510, 435);
+            label6.Font = new Font("Goudy Old Style", 16.125F, FontStyle.Bold | FontStyle.Italic);
+            label6.Location = new Point(529, 435);
             label6.Name = "label6";
-            label6.Size = new Size(78, 32);
+            label6.Size = new Size(44, 51);
             label6.TabIndex = 14;
-            label6.Text = "label6";
+            label6.Text = "6";
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(510, 194);
+            label5.Font = new Font("Goudy Old Style", 16.125F, FontStyle.Bold | FontStyle.Italic);
+            label5.Location = new Point(529, 189);
             label5.Name = "label5";
-            label5.Size = new Size(78, 32);
+            label5.Size = new Size(44, 51);
             label5.TabIndex = 15;
-            label5.Text = "label5";
+            label5.Text = "3";
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(281, 194);
+            label4.Font = new Font("Goudy Old Style", 16.125F, FontStyle.Bold | FontStyle.Italic);
+            label4.Location = new Point(294, 189);
             label4.Name = "label4";
-            label4.Size = new Size(78, 32);
+            label4.Size = new Size(44, 51);
             label4.TabIndex = 14;
-            label4.Text = "label4";
+            label4.Text = "2";
             // 
-            // label3
+            // Label
             // 
-            label3.AutoSize = true;
-            label3.Location = new Point(53, 194);
-            label3.Name = "label3";
-            label3.Size = new Size(78, 32);
-            label3.TabIndex = 13;
-            label3.Text = "label3";
+            Label.AutoSize = true;
+            Label.Font = new Font("Goudy Old Style", 16.125F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            Label.Location = new Point(76, 189);
+            Label.Name = "Label";
+            Label.Size = new Size(44, 51);
+            Label.TabIndex = 13;
+            Label.Text = "1";
             // 
             // panel4
             // 
             panel4.BackColor = SystemColors.ButtonHighlight;
+            panel4.Controls.Add(Lbl_SalidaProducto);
             panel4.Dock = DockStyle.Bottom;
             panel4.Location = new Point(0, 1064);
             panel4.Name = "panel4";
             panel4.Size = new Size(680, 120);
             panel4.TabIndex = 12;
+            // 
+            // Lbl_SalidaProducto
+            // 
+            Lbl_SalidaProducto.AutoSize = true;
+            Lbl_SalidaProducto.Location = new Point(281, 38);
+            Lbl_SalidaProducto.Name = "Lbl_SalidaProducto";
+            Lbl_SalidaProducto.Size = new Size(24, 32);
+            Lbl_SalidaProducto.TabIndex = 0;
+            Lbl_SalidaProducto.Text = "..";
             // 
             // pictureBox12
             // 
@@ -370,60 +407,168 @@
             // flowLayoutPanel1
             // 
             flowLayoutPanel1.BackColor = SystemColors.ActiveBorder;
-            flowLayoutPanel1.Location = new Point(806, 447);
+            flowLayoutPanel1.Controls.Add(Btn_Num0);
+            flowLayoutPanel1.Controls.Add(Btn_Num1);
+            flowLayoutPanel1.Controls.Add(Btn_Num2);
+            flowLayoutPanel1.Controls.Add(btn_Num3);
+            flowLayoutPanel1.Controls.Add(Btn_Num4);
+            flowLayoutPanel1.Controls.Add(Btn_Num5);
+            flowLayoutPanel1.Controls.Add(Btn_Num6);
+            flowLayoutPanel1.Controls.Add(Btn_Num7);
+            flowLayoutPanel1.Controls.Add(Btn_Num8);
+            flowLayoutPanel1.Controls.Add(Btn_Num9);
+            flowLayoutPanel1.Location = new Point(809, 328);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(406, 200);
+            flowLayoutPanel1.Size = new Size(393, 160);
             flowLayoutPanel1.TabIndex = 0;
+            // 
+            // Btn_Num0
+            // 
+            Btn_Num0.Location = new Point(3, 3);
+            Btn_Num0.Name = "Btn_Num0";
+            Btn_Num0.Size = new Size(72, 71);
+            Btn_Num0.TabIndex = 0;
+            Btn_Num0.Text = "0";
+            Btn_Num0.UseVisualStyleBackColor = true;
+            // 
+            // Btn_Num1
+            // 
+            Btn_Num1.Location = new Point(81, 3);
+            Btn_Num1.Name = "Btn_Num1";
+            Btn_Num1.Size = new Size(71, 71);
+            Btn_Num1.TabIndex = 10;
+            Btn_Num1.Text = "1";
+            Btn_Num1.UseVisualStyleBackColor = true;
+            // 
+            // Btn_Num2
+            // 
+            Btn_Num2.Location = new Point(158, 3);
+            Btn_Num2.Name = "Btn_Num2";
+            Btn_Num2.Size = new Size(70, 71);
+            Btn_Num2.TabIndex = 11;
+            Btn_Num2.Text = "2";
+            Btn_Num2.UseVisualStyleBackColor = true;
+            // 
+            // btn_Num3
+            // 
+            btn_Num3.Location = new Point(234, 3);
+            btn_Num3.Name = "btn_Num3";
+            btn_Num3.Size = new Size(72, 71);
+            btn_Num3.TabIndex = 12;
+            btn_Num3.Text = "3";
+            btn_Num3.UseVisualStyleBackColor = true;
+            // 
+            // Btn_Num4
+            // 
+            Btn_Num4.Location = new Point(312, 3);
+            Btn_Num4.Name = "Btn_Num4";
+            Btn_Num4.Size = new Size(72, 71);
+            Btn_Num4.TabIndex = 13;
+            Btn_Num4.Text = "4";
+            Btn_Num4.UseVisualStyleBackColor = true;
+            // 
+            // Btn_Num5
+            // 
+            Btn_Num5.Location = new Point(3, 80);
+            Btn_Num5.Name = "Btn_Num5";
+            Btn_Num5.Size = new Size(71, 71);
+            Btn_Num5.TabIndex = 14;
+            Btn_Num5.Text = "5";
+            Btn_Num5.UseVisualStyleBackColor = true;
+            // 
+            // Btn_Num6
+            // 
+            Btn_Num6.Location = new Point(80, 80);
+            Btn_Num6.Name = "Btn_Num6";
+            Btn_Num6.Size = new Size(71, 71);
+            Btn_Num6.TabIndex = 15;
+            Btn_Num6.Text = "6";
+            Btn_Num6.UseVisualStyleBackColor = true;
+            // 
+            // Btn_Num7
+            // 
+            Btn_Num7.Location = new Point(157, 80);
+            Btn_Num7.Name = "Btn_Num7";
+            Btn_Num7.Size = new Size(73, 71);
+            Btn_Num7.TabIndex = 16;
+            Btn_Num7.Text = "7";
+            Btn_Num7.UseVisualStyleBackColor = true;
+            // 
+            // Btn_Num8
+            // 
+            Btn_Num8.Location = new Point(236, 80);
+            Btn_Num8.Name = "Btn_Num8";
+            Btn_Num8.Size = new Size(71, 71);
+            Btn_Num8.TabIndex = 18;
+            Btn_Num8.Text = "8";
+            Btn_Num8.UseVisualStyleBackColor = true;
+            // 
+            // Btn_Num9
+            // 
+            Btn_Num9.Location = new Point(313, 80);
+            Btn_Num9.Name = "Btn_Num9";
+            Btn_Num9.Size = new Size(71, 71);
+            Btn_Num9.TabIndex = 17;
+            Btn_Num9.Text = "9";
+            Btn_Num9.UseVisualStyleBackColor = true;
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(866, 750);
+            textBox1.Location = new Point(860, 676);
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(291, 39);
             textBox1.TabIndex = 3;
             // 
-            // panel2
-            // 
-            panel2.BackColor = SystemColors.ActiveBorder;
-            panel2.Controls.Add(panel3);
-            panel2.Location = new Point(809, 1012);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(400, 200);
-            panel2.TabIndex = 4;
-            // 
-            // panel3
-            // 
-            panel3.BackColor = SystemColors.ButtonShadow;
-            panel3.Dock = DockStyle.Top;
-            panel3.Location = new Point(0, 0);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(400, 43);
-            panel3.TabIndex = 0;
-            // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(978, 697);
+            label1.Font = new Font("High Tower Text", 13.875F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = SystemColors.ButtonHighlight;
+            label1.Location = new Point(870, 609);
             label1.Name = "label1";
-            label1.Size = new Size(78, 32);
+            label1.Size = new Size(260, 44);
             label1.TabIndex = 5;
-            label1.Text = "label1";
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Location = new Point(975, 940);
-            label2.Name = "label2";
-            label2.Size = new Size(78, 32);
-            label2.TabIndex = 6;
-            label2.Text = "label2";
+            label1.Text = "Ingrese el pago";
             // 
             // progressBar1
             // 
-            progressBar1.Location = new Point(803, 330);
+            progressBar1.Location = new Point(796, 822);
             progressBar1.Name = "progressBar1";
             progressBar1.Size = new Size(406, 19);
             progressBar1.TabIndex = 0;
+            // 
+            // Lbl_ProcesarOrden
+            // 
+            Lbl_ProcesarOrden.AutoSize = true;
+            Lbl_ProcesarOrden.Location = new Point(870, 855);
+            Lbl_ProcesarOrden.Name = "Lbl_ProcesarOrden";
+            Lbl_ProcesarOrden.Size = new Size(19, 32);
+            Lbl_ProcesarOrden.TabIndex = 7;
+            Lbl_ProcesarOrden.Text = ".";
+            // 
+            // button1
+            // 
+            button1.Font = new Font("High Tower Text", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            button1.Location = new Point(917, 737);
+            button1.Name = "button1";
+            button1.Size = new Size(150, 46);
+            button1.TabIndex = 8;
+            button1.Text = "Pagar";
+            button1.UseVisualStyleBackColor = true;
+            // 
+            // TimerBarraProgreso
+            // 
+            TimerBarraProgreso.Interval = 115;
+            // 
+            // Btn_EnviarCodigoProducto
+            // 
+            Btn_EnviarCodigoProducto.Font = new Font("High Tower Text", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            Btn_EnviarCodigoProducto.Location = new Point(931, 505);
+            Btn_EnviarCodigoProducto.Name = "Btn_EnviarCodigoProducto";
+            Btn_EnviarCodigoProducto.Size = new Size(150, 46);
+            Btn_EnviarCodigoProducto.TabIndex = 10;
+            Btn_EnviarCodigoProducto.Text = "Enviar";
+            Btn_EnviarCodigoProducto.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
@@ -431,10 +576,11 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlDarkDark;
             ClientSize = new Size(1261, 1326);
+            Controls.Add(Btn_EnviarCodigoProducto);
+            Controls.Add(button1);
+            Controls.Add(Lbl_ProcesarOrden);
             Controls.Add(progressBar1);
-            Controls.Add(label2);
             Controls.Add(label1);
-            Controls.Add(panel2);
             Controls.Add(textBox1);
             Controls.Add(flowLayoutPanel1);
             Controls.Add(Btn_BD);
@@ -447,6 +593,8 @@
             Text = "Form1";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            panel4.ResumeLayout(false);
+            panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox12).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox11).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox10).EndInit();
@@ -459,7 +607,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            panel2.ResumeLayout(false);
+            flowLayoutPanel1.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -471,10 +619,7 @@
         private Button Btn_BD;
         private FlowLayoutPanel flowLayoutPanel1;
         private TextBox textBox1;
-        private Panel panel2;
-        private Panel panel3;
         private Label label1;
-        private Label label2;
         private PictureBox pictureBox11;
         private PictureBox pictureBox10;
         private PictureBox pictureBox9;
@@ -488,9 +633,10 @@
         private PictureBox pictureBox1;
         private Panel panel4;
         private PictureBox pictureBox12;
+        private Label Lbl_SalidaProducto;
         private Label label5;
         private Label label4;
-        private Label label3;
+        private Label Label;
         private ProgressBar progressBar1;
         private Label label14;
         private Label label13;
@@ -501,5 +647,25 @@
         private Label label8;
         private Label label7;
         private Label label6;
+        private Label label3;
+        private Label Lbl_ProcesarOrden;
+        private Button button1;
+        private System.Windows.Forms.Timer TimerBarraProgreso;
+        private Button Btn_Num0;
+        private Button Btn_Num1;
+        private Button Btn_Num2;
+        private Button button3;
+        private Button button4;
+        private Button Btn_Num5;
+        private Button button6;
+        private Button button7;
+        private Button button9;
+        private Button Btn_Num9;
+        private Button Btn_Num4;
+        private Button btn_Num3;
+        private Button Btn_Num8;
+        private Button Btn_Num7;
+        private Button Btn_Num6;
+        private Button Btn_EnviarCodigoProducto;
     }
 }
