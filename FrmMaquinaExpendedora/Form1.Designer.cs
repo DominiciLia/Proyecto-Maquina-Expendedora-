@@ -82,10 +82,12 @@
             label1 = new Label();
             progressBar1 = new ProgressBar();
             Lbl_ProcesarOrden = new Label();
-            button1 = new Button();
+            Btn_Pagar = new Button();
             TimerBarraProgreso = new System.Windows.Forms.Timer(components);
             Btn_EnviarCodigoProducto = new Button();
             Btn_Borrar = new Button();
+            TimerProductoEnPantalla = new System.Windows.Forms.Timer(components);
+            Lbl_CuantoHayDeDevuelta = new Label();
             panel1.SuspendLayout();
             panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox12).BeginInit();
@@ -408,44 +410,46 @@
             PanelBotones.Controls.Add(Lbl_TituloPrecio);
             PanelBotones.Controls.Add(Lbl_Titulonom);
             PanelBotones.Controls.Add(Lbl_Titulo);
-            PanelBotones.Location = new Point(803, 28);
+            PanelBotones.Location = new Point(794, 28);
             PanelBotones.Name = "PanelBotones";
-            PanelBotones.Size = new Size(406, 278);
+            PanelBotones.Size = new Size(487, 278);
             PanelBotones.TabIndex = 1;
+            PanelBotones.Paint += PanelBotones_Paint;
             // 
             // txt_Money
             // 
             txt_Money.Location = new Point(267, 14);
             txt_Money.Name = "txt_Money";
+            txt_Money.ReadOnly = true;
             txt_Money.Size = new Size(123, 39);
             txt_Money.TabIndex = 7;
             // 
             // Lbl_DisponibilidadProducto
             // 
             Lbl_DisponibilidadProducto.AutoSize = true;
+            Lbl_DisponibilidadProducto.Font = new Font("High Tower Text", 10.125F, FontStyle.Italic);
             Lbl_DisponibilidadProducto.Location = new Point(228, 215);
             Lbl_DisponibilidadProducto.Name = "Lbl_DisponibilidadProducto";
-            Lbl_DisponibilidadProducto.Size = new Size(78, 32);
+            Lbl_DisponibilidadProducto.Size = new Size(0, 31);
             Lbl_DisponibilidadProducto.TabIndex = 6;
-            Lbl_DisponibilidadProducto.Text = "label2";
             // 
             // Lbl_PrecioProducto
             // 
             Lbl_PrecioProducto.AutoSize = true;
+            Lbl_PrecioProducto.Font = new Font("High Tower Text", 10.125F, FontStyle.Italic);
             Lbl_PrecioProducto.Location = new Point(114, 155);
             Lbl_PrecioProducto.Name = "Lbl_PrecioProducto";
-            Lbl_PrecioProducto.Size = new Size(78, 32);
+            Lbl_PrecioProducto.Size = new Size(0, 31);
             Lbl_PrecioProducto.TabIndex = 5;
-            Lbl_PrecioProducto.Text = "label2";
             // 
             // Lbl_NombreProducto
             // 
             Lbl_NombreProducto.AutoSize = true;
+            Lbl_NombreProducto.Font = new Font("High Tower Text", 10.125F, FontStyle.Italic, GraphicsUnit.Point, 0);
             Lbl_NombreProducto.Location = new Point(144, 94);
             Lbl_NombreProducto.Name = "Lbl_NombreProducto";
-            Lbl_NombreProducto.Size = new Size(78, 32);
+            Lbl_NombreProducto.Size = new Size(0, 31);
             Lbl_NombreProducto.TabIndex = 4;
-            Lbl_NombreProducto.Text = "label2";
             // 
             // Lbl_TituloDisponibilidad
             // 
@@ -509,7 +513,7 @@
             flowLayoutPanel1.Controls.Add(Btn_Num7);
             flowLayoutPanel1.Controls.Add(Btn_Num8);
             flowLayoutPanel1.Controls.Add(Btn_Num9);
-            flowLayoutPanel1.Location = new Point(809, 328);
+            flowLayoutPanel1.Location = new Point(838, 423);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
             flowLayoutPanel1.Size = new Size(393, 160);
             flowLayoutPanel1.TabIndex = 0;
@@ -616,9 +620,10 @@
             // 
             // Txt_PagoCliente
             // 
-            Txt_PagoCliente.Location = new Point(860, 676);
+            Txt_PagoCliente.Font = new Font("High Tower Text", 12F, FontStyle.Bold | FontStyle.Italic);
+            Txt_PagoCliente.Location = new Point(893, 803);
             Txt_PagoCliente.Name = "Txt_PagoCliente";
-            Txt_PagoCliente.Size = new Size(291, 39);
+            Txt_PagoCliente.Size = new Size(291, 45);
             Txt_PagoCliente.TabIndex = 3;
             // 
             // label1
@@ -626,7 +631,7 @@
             label1.AutoSize = true;
             label1.Font = new Font("High Tower Text", 13.875F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = SystemColors.ButtonHighlight;
-            label1.Location = new Point(875, 609);
+            label1.Location = new Point(908, 725);
             label1.Name = "label1";
             label1.Size = new Size(260, 44);
             label1.TabIndex = 5;
@@ -634,7 +639,8 @@
             // 
             // progressBar1
             // 
-            progressBar1.Location = new Point(802, 822);
+            progressBar1.ForeColor = SystemColors.GradientInactiveCaption;
+            progressBar1.Location = new Point(834, 343);
             progressBar1.Name = "progressBar1";
             progressBar1.Size = new Size(406, 19);
             progressBar1.TabIndex = 0;
@@ -648,15 +654,16 @@
             Lbl_ProcesarOrden.TabIndex = 7;
             Lbl_ProcesarOrden.Text = ".";
             // 
-            // button1
+            // Btn_Pagar
             // 
-            button1.Font = new Font("High Tower Text", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            button1.Location = new Point(917, 750);
-            button1.Name = "button1";
-            button1.Size = new Size(150, 46);
-            button1.TabIndex = 8;
-            button1.Text = "Pagar";
-            button1.UseVisualStyleBackColor = true;
+            Btn_Pagar.Font = new Font("High Tower Text", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            Btn_Pagar.Location = new Point(963, 868);
+            Btn_Pagar.Name = "Btn_Pagar";
+            Btn_Pagar.Size = new Size(150, 46);
+            Btn_Pagar.TabIndex = 8;
+            Btn_Pagar.Text = "Pagar";
+            Btn_Pagar.UseVisualStyleBackColor = true;
+            Btn_Pagar.Click += button1_Click;
             // 
             // TimerBarraProgreso
             // 
@@ -665,7 +672,7 @@
             // Btn_EnviarCodigoProducto
             // 
             Btn_EnviarCodigoProducto.Font = new Font("High Tower Text", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            Btn_EnviarCodigoProducto.Location = new Point(1052, 505);
+            Btn_EnviarCodigoProducto.Location = new Point(1077, 623);
             Btn_EnviarCodigoProducto.Name = "Btn_EnviarCodigoProducto";
             Btn_EnviarCodigoProducto.Size = new Size(150, 46);
             Btn_EnviarCodigoProducto.TabIndex = 10;
@@ -676,7 +683,7 @@
             // Btn_Borrar
             // 
             Btn_Borrar.Font = new Font("High Tower Text", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            Btn_Borrar.Location = new Point(812, 505);
+            Btn_Borrar.Location = new Point(838, 623);
             Btn_Borrar.Name = "Btn_Borrar";
             Btn_Borrar.Size = new Size(150, 46);
             Btn_Borrar.TabIndex = 11;
@@ -684,15 +691,30 @@
             Btn_Borrar.UseVisualStyleBackColor = true;
             Btn_Borrar.Click += Btn_Borrar_Click_1;
             // 
+            // TimerProductoEnPantalla
+            // 
+            TimerProductoEnPantalla.Interval = 1200;
+            TimerProductoEnPantalla.Tick += TimerProductoEnPantalla_Tick;
+            // 
+            // Lbl_CuantoHayDeDevuelta
+            // 
+            Lbl_CuantoHayDeDevuelta.AutoSize = true;
+            Lbl_CuantoHayDeDevuelta.Font = new Font("High Tower Text", 12F, FontStyle.Bold | FontStyle.Italic);
+            Lbl_CuantoHayDeDevuelta.Location = new Point(841, 1001);
+            Lbl_CuantoHayDeDevuelta.Name = "Lbl_CuantoHayDeDevuelta";
+            Lbl_CuantoHayDeDevuelta.Size = new Size(0, 36);
+            Lbl_CuantoHayDeDevuelta.TabIndex = 12;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlDarkDark;
-            ClientSize = new Size(1261, 1250);
+            ClientSize = new Size(1302, 1250);
+            Controls.Add(Lbl_CuantoHayDeDevuelta);
             Controls.Add(Btn_Borrar);
             Controls.Add(Btn_EnviarCodigoProducto);
-            Controls.Add(button1);
+            Controls.Add(Btn_Pagar);
             Controls.Add(Lbl_ProcesarOrden);
             Controls.Add(progressBar1);
             Controls.Add(label1);
@@ -766,7 +788,7 @@
         private Label label6;
         private Label label3;
         private Label Lbl_ProcesarOrden;
-        private Button button1;
+        private Button Btn_Pagar;
         private System.Windows.Forms.Timer TimerBarraProgreso;
         private Button Btn_Num0;
         private Button Btn_Num1;
@@ -793,5 +815,7 @@
         private Label Lbl_TituloDisponibilidad;
         private TextBox txt_Money;
         private Button Btn_Borrar;
+        private System.Windows.Forms.Timer TimerProductoEnPantalla;
+        private Label Lbl_CuantoHayDeDevuelta;
     }
 }

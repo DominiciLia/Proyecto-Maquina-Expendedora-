@@ -12,14 +12,14 @@ namespace FrmMaquinaExpendedora
 {
     public partial class Form1 : Form
     {
-        public string primnum, secnum;
         public int pagoUsuario;
+        public int PrecioProducto;
         public int DineroEnMaquina;
         public int DevueltaDinero;
-        bool HayDevueltaSuficiente = false;
-        public int CodigoProdcuto;
+        public bool PagoRealizado;
+        public int Falta_Por_Pagar;
 
-      
+
         public Form1()
         {
             InitializeComponent();
@@ -103,44 +103,83 @@ namespace FrmMaquinaExpendedora
 
         private void Btn_Enviar(object sender, EventArgs e)
         {
-            using (ConexionBD conexion = new ConexionBD())
-
+            try
             {
-                CodigoProdcuto = Convert.ToInt32(txt_Money.Text);
+                using (ConexionBD conexion = new ConexionBD())
 
-                var producto = conexion.productos.Find(CodigoProdcuto);
-
-                if (producto != null)
                 {
-                    Lbl_NombreProducto.Text = producto.producto;
-                    Lbl_PrecioProducto.Text = Convert.ToString(producto.precio);
-                    Lbl_DisponibilidadProducto.Text = Convert.ToString(producto.cantidad);
+
+                    var producto = (from Producto in conexion.productos
+                                    where Producto.codigoProducto == txt_Money.Text
+                                    select new
+                                    {
+                                        Producto.producto,
+                                        Producto.precio,
+                                        Producto.cantidad
+
+                                    }).FirstOrDefault();
+
+                    if (producto != null)
+                    {
+                        Lbl_NombreProducto.Text = producto.producto.ToString();
+                        Lbl_PrecioProducto.Text = $"$RD {producto.precio.ToString()}";
+                        Lbl_DisponibilidadProducto.Text = producto.cantidad.ToString();
+                        TimerProductoEnPantalla.Start();
+                    }
 
                 }
 
 
+            }
+            catch (Exception)
+            {
 
-                //CodigoProdcuto= Convert.ToInt32(txt_Money.Text);
-
-                //var producto = (from Producto in conexion.productos
-                //                where Producto.codigoProducto == txt_Money.Text
-                //                select new
-                //                {
-                //                    Producto.producto,
-                //                    Producto.precio,
-                //                    Producto.cantidad
-
-
-                //                });
-
-
-
+                MessageBox.Show("Producto no encontrado. Ingrese código de producto valido");
+                txt_Money.Text = "";
             }
 
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+            //Me falta hacer el boton de pago y el poder actualizar la base de datos y ver los datos.
+            try
+            {
+                if (Txt_PagoCliente != null)
+
+                {
+                    ComprobacionPrecio();
+
+                    if (PagoRealizado is true)
+                    {
+                        // entonces que se compruebe si hay devuelta, y si hay devuelta entonces pondemos un meesage box que diga compra realizada con exito. 
+                    }
+                }
 
 
+
+            }
+            catch (Exception)
+            {
+
+            }
+        }
+
+
+        private void TimerProductoEnPantalla_Tick(object sender, EventArgs e)
+        {
+            progressBar1.Increment(1);
+            if (progressBar1.Value == 99)
+            {
+                TimerProductoEnPantalla.Stop();
+                Lbl_NombreProducto.Text = "";
+                Lbl_PrecioProducto.Text = "";
+                Lbl_DisponibilidadProducto.Text = "";
+                progressBar1.Value = 0;
+
+            }
+        }
 
 
 
@@ -148,6 +187,7 @@ namespace FrmMaquinaExpendedora
         {
             int Precio_Producto = Convert.ToInt32(Lbl_PrecioProducto);
             int Cantidad_Ingresada = Convert.ToInt32(Txt_PagoCliente.Text);
+
 
             DevueltaDinero = (Cantidad_Ingresada - Precio_Producto);
 
@@ -165,6 +205,7 @@ namespace FrmMaquinaExpendedora
             }
             else
             {
+                Lbl_CuantoHayDeDevuelta.Text = $"Tome sus RD${DevueltaDinero} de devuelta.";
                 return DevueltaDinero;
             }
 
@@ -172,15 +213,45 @@ namespace FrmMaquinaExpendedora
 
         }
 
+
+
         public bool ComprobacionPrecio()
         {
-            return HayDevueltaSuficiente;
+            PrecioProducto = Convert.ToInt32(Lbl_PrecioProducto.Text);
+            pagoUsuario = Convert.ToInt32(Txt_PagoCliente.Text);
+            Falta_Por_Pagar = (PrecioProducto - pagoUsuario);
+
+
+            if (Falta_Por_Pagar == 0)
+            {
+                MessageBox.Show("Pago realizado Exitosamente");
+                return PagoRealizado = true;
+            }
+
+            else if (Falta_Por_Pagar > 0)
+            {
+
+                Lbl_CuantoHayDeDevuelta.Text = $"Pago insuficiente. Faltan {Falta_Por_Pagar}";
+                return PagoRealizado = false;
+            }
+
+            else
+            {
+                return PagoRealizado;
+            }
+
+        }
+
+        private void PanelBotones_Paint(object sender, PaintEventArgs e)
+        {
+
         }
 
         
     }
-
 }
+
+
 
 
 
