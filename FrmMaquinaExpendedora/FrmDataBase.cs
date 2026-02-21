@@ -74,6 +74,7 @@ namespace FrmMaquinaExpendedora
                     int filas = context.SaveChanges();
 
                     MessageBox.Show("Producto actualizado correctamente. Filas afectadas: " + filas);
+                    refrescar();
                 }
             }
             catch (Exception ex)

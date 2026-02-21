@@ -126,8 +126,10 @@ namespace FrmMaquinaExpendedora
 
                     if (producto != null)
                     {
+                        PrecioProducto = Convert.ToInt32(producto.precio); 
                         Lbl_NombreProducto.Text = producto.producto.ToString();
-                        Lbl_PrecioProducto.Text = $"$RD {producto.precio.ToString()}";
+                        Lbl_PrecioProducto.Text = $"RD$ {PrecioProducto}"; 
+
                         Lbl_DisponibilidadProducto.Text = producto.cantidad.ToString();
                         TimerProductoEnPantalla.Start();
                     }
@@ -189,6 +191,7 @@ namespace FrmMaquinaExpendedora
                 if (PagoRealizado)
                 {
                     DevueltaComprador();
+
                 }
 
 
@@ -204,34 +207,39 @@ namespace FrmMaquinaExpendedora
 
         public int DevueltaComprador()
         {
-            int Precio_Producto = Convert.ToInt32(Lbl_PrecioProducto);
+
+            int Precio_Producto = Convert.ToInt32(PrecioProducto);
             int Cantidad_Ingresada = Convert.ToInt32(Txt_PagoCliente.Text);
 
-
-            DevueltaDinero = (Cantidad_Ingresada - Precio_Producto);
+            DevueltaDinero = Cantidad_Ingresada - Precio_Producto;
 
             if (DevueltaDinero == 0)
             {
-                MessageBox.Show("Compra realizada con exito ");
-                Lbl_CuantoHayDeDevuelta.Text = "Usted ha pagado la cantidad exacta, no tiene devuleta";
-                DineroEnMaquina += PrecioProducto;
+                MessageBox.Show("Compra realizada con éxito");
+                Lbl_CuantoHayDeDevuelta.Text = "Pago exacto. No tiene devuelta.";
+                DineroEnMaquina += Precio_Producto;
+
+                TimerProductoEnPantalla.Stop();
+                progressBar1.Value = 0;
                 return 0;
             }
-
             else if (DevueltaDinero > DineroEnMaquina)
             {
-                MessageBox.Show("La maquina No tiene devuelta, tome su dinero");
+                MessageBox.Show("La máquina no tiene suficiente devuelta.");
+                Lbl_CuantoHayDeDevuelta.Text = $"Tome de nuevo su dinero: {Cantidad_Ingresada}";
+
+                TimerProductoEnPantalla.Stop();
+                progressBar1.Value = 0;
+
                 return 0;
             }
             else
             {
                 Lbl_CuantoHayDeDevuelta.Text = $"Tome sus RD${DevueltaDinero} de devuelta.";
-                MessageBox.Show("Compra realizada con exito ");
-                DineroEnMaquina += PrecioProducto;
+                MessageBox.Show("Compra realizada con éxito");
+                DineroEnMaquina += Precio_Producto;
                 return DevueltaDinero;
             }
-
-
 
         }
 
@@ -239,7 +247,8 @@ namespace FrmMaquinaExpendedora
 
         public bool ComprobacionPrecio()
         {
-            PrecioProducto = Convert.ToInt32(Lbl_PrecioProducto.Text.Replace("$RD ", ""));
+
+            PrecioProducto = PrecioProducto;
             pagoUsuario = Convert.ToInt32(Txt_PagoCliente.Text);
             Falta_Por_Pagar = (PrecioProducto - pagoUsuario);
 

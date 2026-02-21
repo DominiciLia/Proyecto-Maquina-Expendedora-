@@ -7,12 +7,12 @@
       "RelativeMoniker": "D:0:0:{EE10665D-5FD5-D0F2-670D-2585568EC6B9}|FrmMaquinaExpendedora\\FrmMaquinaExpendedora.csproj|solutionrelative:frmmaquinaexpendedora\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EE10665D-5FD5-D0F2-670D-2585568EC6B9}|FrmMaquinaExpendedora\\FrmMaquinaExpendedora.csproj|c:\\users\\domin\\source\\repos\\mquina expendedora\\frmmaquinaexpendedora\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{EE10665D-5FD5-D0F2-670D-2585568EC6B9}|FrmMaquinaExpendedora\\FrmMaquinaExpendedora.csproj|solutionrelative:frmmaquinaexpendedora\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{EE10665D-5FD5-D0F2-670D-2585568EC6B9}|FrmMaquinaExpendedora\\FrmMaquinaExpendedora.csproj|c:\\users\\domin\\source\\repos\\mquina expendedora\\frmmaquinaexpendedora\\frmdatabase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{EE10665D-5FD5-D0F2-670D-2585568EC6B9}|FrmMaquinaExpendedora\\FrmMaquinaExpendedora.csproj|solutionrelative:frmmaquinaexpendedora\\frmdatabase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EE10665D-5FD5-D0F2-670D-2585568EC6B9}|FrmMaquinaExpendedora\\FrmMaquinaExpendedora.csproj|c:\\users\\domin\\source\\repos\\mquina expendedora\\frmmaquinaexpendedora\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{EE10665D-5FD5-D0F2-670D-2585568EC6B9}|FrmMaquinaExpendedora\\FrmMaquinaExpendedora.csproj|solutionrelative:frmmaquinaexpendedora\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{EE10665D-5FD5-D0F2-670D-2585568EC6B9}|FrmMaquinaExpendedora\\FrmMaquinaExpendedora.csproj|c:\\users\\domin\\source\\repos\\mquina expendedora\\frmmaquinaexpendedora\\frmdatabase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
@@ -71,13 +71,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "FrmDataBase.cs",
               "DocumentMoniker": "C:\\Users\\domin\\source\\repos\\Mquina Expendedora\\FrmMaquinaExpendedora\\FrmDataBase.cs",
               "RelativeDocumentMoniker": "FrmMaquinaExpendedora\\FrmDataBase.cs",
               "ToolTip": "C:\\Users\\domin\\source\\repos\\Mquina Expendedora\\FrmMaquinaExpendedora\\FrmDataBase.cs",
               "RelativeToolTip": "FrmMaquinaExpendedora\\FrmDataBase.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAADcAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAADUAAAAAAAAAAAAgwEwAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-02-20T14:08:18.77Z",
               "EditorCaption": ""
@@ -90,14 +90,14 @@
               "RelativeDocumentMoniker": "FrmMaquinaExpendedora\\Form1.cs",
               "ToolTip": "C:\\Users\\domin\\source\\repos\\Mquina Expendedora\\FrmMaquinaExpendedora\\Form1.cs*",
               "RelativeToolTip": "FrmMaquinaExpendedora\\Form1.cs*",
-              "ViewState": "AgIAAJMAAAAAAAAAAAA/wAQBAAAhAAAAAAAAAA==",
+              "ViewState": "AgIAAOEAAAAAAAAAAAAYwAoBAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-02-18T22:14:43.101Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Form1.cs [Design]",
               "DocumentMoniker": "C:\\Users\\domin\\source\\repos\\Mquina Expendedora\\FrmMaquinaExpendedora\\Form1.cs",
               "RelativeDocumentMoniker": "FrmMaquinaExpendedora\\Form1.cs",
