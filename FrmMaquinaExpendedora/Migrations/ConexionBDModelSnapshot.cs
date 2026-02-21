@@ -23,8 +23,11 @@ namespace FrmMaquinaExpendedora.Migrations
 
             modelBuilder.Entity("Producto", b =>
                 {
-                    b.Property<string>("codigoProducto")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("codigoProducto")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("codigoProducto"));
 
                     b.Property<int>("cantidad")
                         .HasColumnType("int");
@@ -38,7 +41,7 @@ namespace FrmMaquinaExpendedora.Migrations
 
                     b.HasKey("codigoProducto");
 
-                    b.ToTable("productos", (string)null);
+                    b.ToTable("productos");
                 });
 #pragma warning restore 612, 618
         }

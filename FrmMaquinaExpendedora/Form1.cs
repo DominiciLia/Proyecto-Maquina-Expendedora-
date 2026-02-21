@@ -7,6 +7,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using Microsoft.EntityFrameworkCore;
+using System.Diagnostics.Eventing.Reader;
 
 namespace FrmMaquinaExpendedora
 {
@@ -23,6 +24,8 @@ namespace FrmMaquinaExpendedora
         public Form1()
         {
             InitializeComponent();
+
+
         }
 
         private void label11_Click(object sender, EventArgs e)
@@ -94,6 +97,8 @@ namespace FrmMaquinaExpendedora
 
         private void Btn_Borrar_Click_1(object sender, EventArgs e)
         {
+            TimerProductoEnPantalla.Stop();
+            progressBar1.Value = 0;
             string valor = txt_Money.Text;
             if (valor != "")
             {
@@ -110,7 +115,7 @@ namespace FrmMaquinaExpendedora
                 {
 
                     var producto = (from Producto in conexion.productos
-                                    where Producto.codigoProducto == txt_Money.Text
+                                    where Producto.codigoProducto == Convert.ToInt32(txt_Money.Text)
                                     select new
                                     {
                                         Producto.producto,
@@ -142,28 +147,7 @@ namespace FrmMaquinaExpendedora
 
         private void button1_Click(object sender, EventArgs e)
         {
-
-            //Me falta hacer el boton de pago y el poder actualizar la base de datos y ver los datos.
-            try
-            {
-                if (Txt_PagoCliente != null)
-
-                {
-                    ComprobacionPrecio();
-
-                    if (PagoRealizado is true)
-                    {
-                        // entonces que se compruebe si hay devuelta, y si hay devuelta entonces pondemos un meesage box que diga compra realizada con exito. 
-                    }
-                }
-
-
-
-            }
-            catch (Exception)
-            {
-
-            }
+            
         }
 
 
@@ -173,6 +157,8 @@ namespace FrmMaquinaExpendedora
             if (progressBar1.Value == 99)
             {
                 TimerProductoEnPantalla.Stop();
+
+                txt_Money.Text = "";
                 Lbl_NombreProducto.Text = "";
                 Lbl_PrecioProducto.Text = "";
                 Lbl_DisponibilidadProducto.Text = "";
@@ -182,8 +168,41 @@ namespace FrmMaquinaExpendedora
         }
 
 
+        private void btn_pagar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (string.IsNullOrEmpty(Txt_PagoCliente.Text))
+                {
+                    MessageBox.Show("Ingrese un monto");
+                    return;
+                }
 
-        public int DevueltaComrador()
+                if (string.IsNullOrEmpty(Lbl_PrecioProducto.Text))
+                {
+                    MessageBox.Show("Seleccione un producto primero");
+                    return;
+                }
+
+                ComprobacionPrecio();
+
+                if (PagoRealizado)
+                {
+                    DevueltaComprador();
+                }
+
+
+            }
+            catch (Exception ex) 
+            {
+                MessageBox.Show($"Ha ocurrido un error;{ex}");
+            }
+        }
+
+
+
+
+        public int DevueltaComprador()
         {
             int Precio_Producto = Convert.ToInt32(Lbl_PrecioProducto);
             int Cantidad_Ingresada = Convert.ToInt32(Txt_PagoCliente.Text);
@@ -193,8 +212,9 @@ namespace FrmMaquinaExpendedora
 
             if (DevueltaDinero == 0)
             {
-                MessageBox.Show("Usted ha pagado la cantidad exacta, no tiene devuleta");
-
+                MessageBox.Show("Compra realizada con exito ");
+                Lbl_CuantoHayDeDevuelta.Text = "Usted ha pagado la cantidad exacta, no tiene devuleta";
+                DineroEnMaquina += PrecioProducto;
                 return 0;
             }
 
@@ -206,6 +226,8 @@ namespace FrmMaquinaExpendedora
             else
             {
                 Lbl_CuantoHayDeDevuelta.Text = $"Tome sus RD${DevueltaDinero} de devuelta.";
+                MessageBox.Show("Compra realizada con exito ");
+                DineroEnMaquina += PrecioProducto;
                 return DevueltaDinero;
             }
 
@@ -217,7 +239,7 @@ namespace FrmMaquinaExpendedora
 
         public bool ComprobacionPrecio()
         {
-            PrecioProducto = Convert.ToInt32(Lbl_PrecioProducto.Text);
+            PrecioProducto = Convert.ToInt32(Lbl_PrecioProducto.Text.Replace("$RD ", ""));
             pagoUsuario = Convert.ToInt32(Txt_PagoCliente.Text);
             Falta_Por_Pagar = (PrecioProducto - pagoUsuario);
 
@@ -235,21 +257,28 @@ namespace FrmMaquinaExpendedora
                 return PagoRealizado = false;
             }
 
-            else
-            {
-                return PagoRealizado;
-            }
 
+            return PagoRealizado;
         }
+
+
 
         private void PanelBotones_Paint(object sender, PaintEventArgs e)
         {
 
         }
 
-        
+        private void Btn_Uptade_Click(object sender, EventArgs e)
+        {
+            FrmDataBase frmDataBase = new FrmDataBase();
+            this.Hide();
+            frmDataBase.Show();
+
+        }
+
     }
 }
+
 
 
 

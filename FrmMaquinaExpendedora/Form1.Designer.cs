@@ -66,7 +66,7 @@
             Lbl_TituloPrecio = new Label();
             Lbl_Titulonom = new Label();
             Lbl_Titulo = new Label();
-            Btn_BD = new Button();
+            Btn_Uptade = new Button();
             flowLayoutPanel1 = new FlowLayoutPanel();
             Btn_Num0 = new Button();
             Btn_Num1 = new Button();
@@ -83,7 +83,7 @@
             progressBar1 = new ProgressBar();
             Lbl_ProcesarOrden = new Label();
             Btn_Pagar = new Button();
-            TimerBarraProgreso = new System.Windows.Forms.Timer(components);
+            TimerRefrescar_Todo = new System.Windows.Forms.Timer(components);
             Btn_EnviarCodigoProducto = new Button();
             Btn_Borrar = new Button();
             TimerProductoEnPantalla = new System.Windows.Forms.Timer(components);
@@ -491,14 +491,17 @@
             Lbl_Titulo.TabIndex = 0;
             Lbl_Titulo.Text = "Código producto:";
             // 
-            // Btn_BD
+            // Btn_Uptade
             // 
-            Btn_BD.Location = new Point(767, 1148);
-            Btn_BD.Name = "Btn_BD";
-            Btn_BD.Size = new Size(150, 46);
-            Btn_BD.TabIndex = 2;
-            Btn_BD.Text = "Ver BD";
-            Btn_BD.UseVisualStyleBackColor = true;
+            Btn_Uptade.Font = new Font("High Tower Text", 12F, FontStyle.Bold | FontStyle.Italic);
+            Btn_Uptade.ForeColor = Color.Firebrick;
+            Btn_Uptade.Location = new Point(1177, 1166);
+            Btn_Uptade.Name = "Btn_Uptade";
+            Btn_Uptade.Size = new Size(150, 46);
+            Btn_Uptade.TabIndex = 2;
+            Btn_Uptade.Text = "Update";
+            Btn_Uptade.UseVisualStyleBackColor = true;
+            Btn_Uptade.Click += Btn_Uptade_Click;
             // 
             // flowLayoutPanel1
             // 
@@ -513,7 +516,7 @@
             flowLayoutPanel1.Controls.Add(Btn_Num7);
             flowLayoutPanel1.Controls.Add(Btn_Num8);
             flowLayoutPanel1.Controls.Add(Btn_Num9);
-            flowLayoutPanel1.Location = new Point(838, 423);
+            flowLayoutPanel1.Location = new Point(841, 423);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
             flowLayoutPanel1.Size = new Size(393, 160);
             flowLayoutPanel1.TabIndex = 0;
@@ -621,7 +624,7 @@
             // Txt_PagoCliente
             // 
             Txt_PagoCliente.Font = new Font("High Tower Text", 12F, FontStyle.Bold | FontStyle.Italic);
-            Txt_PagoCliente.Location = new Point(893, 803);
+            Txt_PagoCliente.Location = new Point(892, 803);
             Txt_PagoCliente.Name = "Txt_PagoCliente";
             Txt_PagoCliente.Size = new Size(291, 45);
             Txt_PagoCliente.TabIndex = 3;
@@ -631,7 +634,7 @@
             label1.AutoSize = true;
             label1.Font = new Font("High Tower Text", 13.875F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = SystemColors.ButtonHighlight;
-            label1.Location = new Point(908, 725);
+            label1.Location = new Point(907, 725);
             label1.Name = "label1";
             label1.Size = new Size(260, 44);
             label1.TabIndex = 5;
@@ -657,17 +660,17 @@
             // Btn_Pagar
             // 
             Btn_Pagar.Font = new Font("High Tower Text", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            Btn_Pagar.Location = new Point(963, 868);
+            Btn_Pagar.Location = new Point(962, 868);
             Btn_Pagar.Name = "Btn_Pagar";
             Btn_Pagar.Size = new Size(150, 46);
             Btn_Pagar.TabIndex = 8;
             Btn_Pagar.Text = "Pagar";
             Btn_Pagar.UseVisualStyleBackColor = true;
-            Btn_Pagar.Click += button1_Click;
+            Btn_Pagar.Click += btn_pagar_Click;
             // 
-            // TimerBarraProgreso
+            // TimerRefrescar_Todo
             // 
-            TimerBarraProgreso.Interval = 115;
+            TimerRefrescar_Todo.Interval = 115;
             // 
             // Btn_EnviarCodigoProducto
             // 
@@ -710,7 +713,7 @@
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlDarkDark;
-            ClientSize = new Size(1302, 1250);
+            ClientSize = new Size(1339, 1229);
             Controls.Add(Lbl_CuantoHayDeDevuelta);
             Controls.Add(Btn_Borrar);
             Controls.Add(Btn_EnviarCodigoProducto);
@@ -720,7 +723,7 @@
             Controls.Add(label1);
             Controls.Add(Txt_PagoCliente);
             Controls.Add(flowLayoutPanel1);
-            Controls.Add(Btn_BD);
+            Controls.Add(Btn_Uptade);
             Controls.Add(PanelBotones);
             Controls.Add(panel1);
             MaximizeBox = false;
@@ -755,7 +758,7 @@
 
         private Panel panel1;
         private Panel PanelBotones;
-        private Button Btn_BD;
+        private Button Btn_Uptade;
         private FlowLayoutPanel flowLayoutPanel1;
         private TextBox Txt_PagoCliente;
         private Label label1;
@@ -789,7 +792,7 @@
         private Label label3;
         private Label Lbl_ProcesarOrden;
         private Button Btn_Pagar;
-        private System.Windows.Forms.Timer TimerBarraProgreso;
+        private System.Windows.Forms.Timer TimerRefrescar_Todo;
         private Button Btn_Num0;
         private Button Btn_Num1;
         private Button Btn_Num2;

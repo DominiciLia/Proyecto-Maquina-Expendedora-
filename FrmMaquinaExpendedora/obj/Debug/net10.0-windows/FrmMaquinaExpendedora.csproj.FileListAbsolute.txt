@@ -149,3 +149,4 @@ C:\Users\domin\source\repos\Mquina Expendedora\FrmMaquinaExpendedora\obj\Debug\n
 C:\Users\domin\source\repos\Mquina Expendedora\FrmMaquinaExpendedora\obj\Debug\net10.0-windows\FrmMaquinaExpendedora.genruntimeconfig.cache
 C:\Users\domin\source\repos\Mquina Expendedora\FrmMaquinaExpendedora\obj\Debug\net10.0-windows\ref\FrmMaquinaExpendedora.dll
 C:\Users\domin\source\repos\Mquina Expendedora\FrmMaquinaExpendedora\obj\Debug\net10.0-windows\FrmMaquinaExpendedora.Properties.Resources.resources
+C:\Users\domin\source\repos\Mquina Expendedora\FrmMaquinaExpendedora\obj\Debug\net10.0-windows\FrmMaquinaExpendedora.FrmDataBase.resources
